@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article</title>
+</head>
+<body>
+    <a href="/feed">Home</a>
+    <div class="full-article">
+        <h3><%= user.title %></h3>
+        <p name="articleContent" id="article-content"><%= user.desc %></p>
+        <p><%= user.creat_at %></p>
+        <div class="text-article">
+           <form action="/delete-post/<%= user._id %>" method="post">
+            <button>Delete</button>
+            <a href="/edit/<%=user._id %>">Edit</a>
+           </form> 
+        </div>
+    </div>
+</body>
+</html>

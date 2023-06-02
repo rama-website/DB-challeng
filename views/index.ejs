@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Challeng</title>
+</head>
+<body>
+
+    <div class="articles">
+        <form class="form" action="/create-article" method="post">
+            <input type="text" name="title" placeholder="title here">
+            <textarea name="desc" placeholder="write here"></textarea>
+            <button class="btn-submit">Submit</button>
+
+        </form>
+    </div>
+           
+            
+
+   <a href="/feed">Add new post</a>
+   
+    <div class="article-content">
+       <% for(let i =0; i< users.length; i++){%>
+        <div class="article-contaner">
+            <h2><%=users[i].title %></h2>
+            <p><%=users[i].text %></p>
+            </div>
+
+      <% } %> 
+     
+    </div>
+
+    <div class="user-list">
+        <% for (let i=0; i < users.length; i++){ %>
+            <div class="user-list-container">
+                <div class="text">
+                    <h3 class="name-data"><span>Title:
+                            <%= users[i].title %>
+                        </span></h3>
+                    <p class="user-post">Text:
+                        <%= users[i].text.slice(0,50) %>
+                    </p>
+                    <p>Add at:<%=users[i].creat_at %></p>
+                    <a href="/fullArticle/<%=users[i]._id %>">See More...</a>
+                </div>
+
+            </div>
+            <%}%>
+    </div>
+    
+</body>
+</html>
